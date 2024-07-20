@@ -14,6 +14,7 @@
             justify-content: center;
             align-items: center;
             background-color: #f4f4f4;
+            transition: background-color 0.5s;
         }
         .container {
             text-align: center;
@@ -21,6 +22,7 @@
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
+            transition: background-color 0.5s, color 0.5s;
         }
         .title {
             font-size: 2em;
@@ -36,7 +38,25 @@
             font-style: italic;
             text-align: left;
         }
+        .image {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 100px;
+            height: auto;
+            cursor: pointer;
+        }
+        .dark-mode {
+            background-color: #000 !important;
+            color: #fff !important;
+        }
     </style>
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            document.querySelector('.container').classList.toggle('dark-mode');
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -62,5 +82,7 @@
         <div class="subtitle">Copy 9</div>
         <div class="copy-text">@El pana Venezolano 👻🇻🇪🤙🤑:POV yo: en un partido vamos 3-0 y suena un Phonk brazileño increíble, y la adrenalina se me sube a 1000000000%, 2 minut</div>
     </div>
+    <img src="https://cdn.discordapp.com/attachments/1264358002530713671/1264358016455544872/image.png?ex=669d94a9&is=669c4329&hm=d16677da8383e098746f3fbf20d918f80dfb28bd7addb67a85e9527323ae55ac&" 
+         alt="Imagen decorativa" class="image" onclick="toggleDarkMode()">
 </body>
 </html>
