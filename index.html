@@ -83,17 +83,40 @@
             height: auto;
             cursor: pointer;
         }
+        .visitor-counter {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 0.8em;
+            color: #333;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 5px 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
     </style>
     <script>
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
             document.querySelector('.container').classList.toggle('dark-mode');
         }
+        function updateVisitorCounter() {
+            const counterElement = document.getElementById('visitorCounter');
+            let count = localStorage.getItem('visitorCount');
+            if (!count) {
+                count = 0;
+            }
+            count++;
+            localStorage.setItem('visitorCount', count);
+            counterElement.innerText = `Visitas: ${count}`;
+        }
+        window.onload = updateVisitorCounter;
     </script>
 </head>
 <body>
+    <div class="visitor-counter" id="visitorCounter">Visitas: 0</div>
     <div class="discord-container">
-        <div class="discord-text">Únete a este servidor de discord<br>para un Brawl Pass gratis:</div>
+        <div class="discord-text">Únete a este servidor de discord<br>para jugar y divertirte:</div>
         <a href="https://discord.gg/GcNJBvVnp9">
             <img src="https://cdn.discordapp.com/attachments/1264358002530713671/1264372151184789574/image.png?ex=669da1d3&is=669c5053&hm=4ede02fe124a233e74eddb23938bca59d7c716f9b6347e331f7f2decd7da37bc&" alt="Discord" class="discord-image">
         </a>
