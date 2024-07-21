@@ -15,6 +15,7 @@
             align-items: center;
             background-color: #f4f4f4;
             transition: background-color 0.5s;
+            overflow: hidden;
         }
         .container {
             text-align: center;
@@ -22,6 +23,8 @@
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
+            max-height: 80vh; /* Tamaño máximo para la caja de comentarios */
+            overflow-y: auto; /* Permite el scroll vertical */
             transition: background-color 0.5s, color 0.5s;
         }
         .title {
